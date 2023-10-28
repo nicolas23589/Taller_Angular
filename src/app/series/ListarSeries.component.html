@@ -1,0 +1,43 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-4">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th class="h4">#</th>
+            <th class="h4">Name</th>
+            <th class="h4">Channel</th>
+            <th class="h4">Seasons</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let c of series" (click)="onSerieClick(c)">
+            <td class= "bg-light">
+              <dd>{{c.id}}</dd>
+            </td>
+            <td class= "bg-light">
+              <dd style="color:blue">{{c.name}}</dd>
+            </td>
+            <td class= "bg-light">
+              <dd>{{c.channel}}</dd>
+            </td>
+            <td class= "bg-light">
+              <dd>{{c.seasons}}</dd>
+            </td>
+        </tr>
+        </tbody>
+      </table>
+      <p>El promedio es: {{calcularPromedio()}}</p>
+    </div>
+
+    <div class="card col-4" >
+      <h2 class="card-title" width="100%">{{serieSeleccionada?.name}}</h2>
+      <img class= "img"  width="60%" height="200" src="{{serieSeleccionada?.poster}}">
+      <p class="card-body"  width="100%">{{serieSeleccionada?.description}}</p>
+      <a class="card-link"  >{{serieSeleccionada?.webpage}}</a>
+      
+    </div>
+    <div class="col-2"></div>
+  </div>
+</div>
